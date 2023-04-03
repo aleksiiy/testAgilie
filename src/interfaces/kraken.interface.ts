@@ -1,0 +1,1 @@
+export interface IKraken {  krakenApiKey: string;  krakenApiSecretKey: string;  publicWebSocketURL: string;}
