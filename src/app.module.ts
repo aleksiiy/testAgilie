@@ -7,16 +7,17 @@ import { ExchangeService } from './components/exchange/exchange.service';
 import { ExchangeController } from './components/exchange/exchange.controller';
 import { SchedulerService } from './services/scheduler.service';
 import { KrakenModule } from './components/kraken/kraken.module';
+import { ProductsModule } from './products/products.module';
 
 @Module({
-  imports: [PrismaModule, KrakenModule],
+  imports: [PrismaModule, KrakenModule, ProductsModule],
   controllers: [CryptoController, ExchangeController],
   providers: [AppService, CryptoService, ExchangeService, SchedulerService],
 })
 export class AppModule {
 	constructor(private schedulerService: SchedulerService) {
 		if (this.schedulerService.init(`0 0 * * *`)) {
-			this.schedulerService.start();
+			// this.schedulerService.start();
 		}
 	}
 }
