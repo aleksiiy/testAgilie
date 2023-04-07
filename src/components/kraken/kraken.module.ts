@@ -26,7 +26,7 @@ export class KrakenModule {
 	];
 
 	constructor(private KrakenService: KrakenService) {
-		// this.init();
+		this.init();
 	}
 
 	private async init() {
